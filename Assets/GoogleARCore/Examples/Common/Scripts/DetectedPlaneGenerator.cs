@@ -39,6 +39,18 @@ namespace GoogleARCore.Examples.Common
         /// the application to avoid per-frame allocations.
         /// </summary>
         private List<DetectedPlane> m_NewPlanes = new List<DetectedPlane>();
+        private List<GameObject> m_scenePlanes = new List<GameObject>();
+        private bool m_planeOnState;
+        public void Planes()
+        {
+            m_planeOnState = !m_planeOnState;
+            // turn plane visibility on or off
+            foreach(var plane in m_scenePlanes)
+            {
+                plane.SetActive(m_planeOnState);
+            }
+        }
+        
 
         /// <summary>
         /// The Unity Update method.
@@ -59,6 +71,7 @@ namespace GoogleARCore.Examples.Common
                 // the origin with an identity rotation since the mesh for our prefab is updated in Unity World
                 // coordinates.
                 GameObject planeObject = Instantiate(DetectedPlanePrefab, Vector3.zero, Quaternion.identity, transform);
+                m_scenePlanes.Add(planeObject);
                 planeObject.GetComponent<DetectedPlaneVisualizer>().Initialize(m_NewPlanes[i]);
             }
         }

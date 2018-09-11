@@ -77,6 +77,17 @@ namespace Packt.ARCoreDesign
         /// </summary>
         private bool m_IsQuitting = false;
 
+        private List<GameObject> m_sceneObjects = new List<GameObject>();
+        public void ClearScene()
+        {
+            foreach(var obj in m_sceneObjects)
+            {
+                Destroy(obj);
+            }
+            m_sceneObjects.Clear();
+        }
+
+
         /// <summary>
         /// The Unity Update() method.
         /// </summary>
@@ -135,6 +146,7 @@ namespace Packt.ARCoreDesign
 
                     // Instantiate Andy model at the hit pose.
                     var andyObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
+                    m_sceneObjects.Add(andyObject);
 
                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
                     andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
