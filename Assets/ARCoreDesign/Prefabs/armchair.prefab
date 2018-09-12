@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4951713751265910}
   - component: {fileID: 33864732096634112}
   - component: {fileID: 23832360535928096}
+  - component: {fileID: 65532696361664582}
+  - component: {fileID: 114235666165490746}
   m_Layer: 0
   m_Name: 24 Ligne Roset Citta armchair
   m_TagString: Untagged
@@ -86,7 +88,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 143c0313d942a944a8a146ce20b39277, type: 3}
-  - {fileID: 2100000, guid: a9db2a07bdd2e9f428a2ba735500c6e5, type: 2}
+  - {fileID: 2100002, guid: 143c0313d942a944a8a146ce20b39277, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,3 +115,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157879753054588}
   m_Mesh: {fileID: 4300000, guid: 143c0313d942a944a8a146ce20b39277, type: 3}
+--- !u!65 &65532696361664582
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157879753054588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7642952, y: 0.8900348, z: 0.76541036}
+  m_Center: {x: 0.0007144958, y: 0, z: 0.38270518}
+--- !u!114 &114235666165490746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157879753054588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5798c97edba85a34f909316e6aa9e9a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialSlot: 1
+  DefaultMaterial: {fileID: 2100002, guid: 143c0313d942a944a8a146ce20b39277, type: 3}
+  OutlineMaterial: {fileID: 2100000, guid: a9db2a07bdd2e9f428a2ba735500c6e5, type: 2}
+  outlineOn: 0
